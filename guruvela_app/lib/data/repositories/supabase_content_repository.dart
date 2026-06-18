@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../core/constants/app_constants.dart';
@@ -14,6 +15,8 @@ class SupabaseContentRepository implements ContentRepository {
 
   @override
   Future<List<Mentor>> fetchMentors({int? limit}) async {
+    debugPrint('[SupabaseRepo] fetchMentors(limit: $limit) — '
+        'table: "${SupabaseTables.mentors}"');
     var builder = _client
         .from(SupabaseTables.mentors)
         .select(
@@ -25,7 +28,9 @@ class SupabaseContentRepository implements ContentRepository {
         .order('sort_order', ascending: true);
     if (limit != null) builder = builder.limit(limit);
 
+    debugPrint('[SupabaseRepo] executing query...');
     final data = await builder;
+    debugPrint('[SupabaseRepo] raw rows: ${data.length}');
     return data.cast<Map<String, dynamic>>().map(Mentor.fromMap).toList();
   }
 
