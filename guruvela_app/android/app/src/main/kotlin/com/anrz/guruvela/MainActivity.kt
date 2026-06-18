@@ -1,4 +1,4 @@
-package com.example.guruvela_app
+package com.anrz.guruvela
 
 import io.flutter.embedding.android.FlutterActivity
 
