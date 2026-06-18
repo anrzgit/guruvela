@@ -43,10 +43,10 @@ class MentorCard extends ConsumerWidget {
                 const SizedBox(width: 6),
                 InkWell(
                   onTap: () => LinkLauncher.open(context, mentor.linkedinUrl!),
-                  child: const Icon(
-                    Icons.business_center,
-                    size: 18,
-                    color: AppColors.linkedIn,
+                  child: Image.asset(
+                    'assets/images/linkedin-icon.png',
+                    height: 24,
+                    width: 24,
                   ),
                 ),
               ],

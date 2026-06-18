@@ -61,7 +61,7 @@ class _ContentTile extends StatelessWidget {
     final accent = isGuide ? context.scheme.primary : context.colors.success;
     return AppCard(
       padding: const EdgeInsets.all(AppSpacing.md),
-      onTap: () => context.go(AppRoutes.contentPage(item.slug)),
+      onTap: () => context.push(AppRoutes.contentPage(item.slug)),
       child: Row(
         children: [
           Container(

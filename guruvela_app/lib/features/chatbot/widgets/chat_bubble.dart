@@ -81,7 +81,7 @@ class ChatBubble extends ConsumerWidget {
             Padding(
               padding: const EdgeInsets.only(top: AppSpacing.sm),
               child: InkWell(
-                onTap: () => context.go(AppRoutes.howToUse),
+                onTap: () => context.push(AppRoutes.howToUse),
                 child: Container(
                   padding: const EdgeInsets.all(AppSpacing.sm),
                   decoration: BoxDecoration(
@@ -150,9 +150,9 @@ class ChatBubble extends ConsumerWidget {
 
   void _openRelated(BuildContext context, String slug) {
     if (slug == 'josaa-comprehensive-faq') {
-      context.go(AppRoutes.faqs);
+      context.push(AppRoutes.faqs);
     } else {
-      context.go(AppRoutes.contentPage(slug));
+      context.push(AppRoutes.contentPage(slug));
     }
   }
 }
