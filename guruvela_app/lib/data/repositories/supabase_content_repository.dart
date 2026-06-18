@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -29,7 +31,11 @@ class SupabaseContentRepository implements ContentRepository {
     if (limit != null) builder = builder.limit(limit);
 
     debugPrint('[SupabaseRepo] executing query...');
-    final data = await builder;
+    final data = await builder.timeout(
+      const Duration(seconds: 15),
+      onTimeout: () =>
+          throw TimeoutException('Supabase mentors query timed out after 15s'),
+    );
     debugPrint('[SupabaseRepo] raw rows: ${data.length}');
     return data.cast<Map<String, dynamic>>().map(Mentor.fromMap).toList();
   }

@@ -54,7 +54,7 @@ class MentorsScreen extends ConsumerWidget {
                     crossAxisCount: 2,
                     mainAxisSpacing: AppSpacing.xs,
                     crossAxisSpacing: AppSpacing.xs,
-                    childAspectRatio: 0.7,
+                    childAspectRatio: 0.65,
                   ),
                   delegate: SliverChildBuilderDelegate(
                     (context, i) => MentorCard(mentor: list[i]),

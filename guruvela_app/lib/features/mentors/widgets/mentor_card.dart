@@ -32,10 +32,11 @@ class MentorCard extends ConsumerWidget {
             children: [
               Flexible(
                 child: Text(
+                  maxLines: 2,
                   mentor.name,
                   style: context.text.titleLarge,
                   overflow: TextOverflow.ellipsis,
-                  textAlign: TextAlign.center,
+                  textAlign: TextAlign.start,
                 ),
               ),
               if (mentor.linkedinUrl != null) ...[
@@ -56,7 +57,7 @@ class MentorCard extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             decoration: BoxDecoration(
               color: context.scheme.primary.withValues(alpha: 0.10),
-              borderRadius: BorderRadius.circular(AppRadius.pill),
+              borderRadius: BorderRadius.circular(AppRadius.sm),
             ),
             child: Text(
               mentor.branch,
@@ -66,7 +67,7 @@ class MentorCard extends ConsumerWidget {
               ),
             ),
           ),
-          const SizedBox(height: 4),
+          const SizedBox(height: 8),
           Text(
             mentor.state,
             style: context.text.bodySmall?.copyWith(
