@@ -1,0 +1,59 @@
+name: guruvela_app
+description: "Guruvela — JoSAA/CSAB college counselling, rank prediction, and mentorship app."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # State management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Routing
+  go_router: ^14.6.2
+
+  # Backend / data
+  supabase_flutter: ^2.8.0
+  google_generative_ai: ^0.4.6
+
+  # UI / theming
+  google_fonts: ^6.2.1
+  flutter_markdown: ^0.7.4+3
+  flutter_svg: ^2.0.16
+
+  # Utilities
+  url_launcher: ^6.3.1
+  shared_preferences: ^2.3.3
+  csv: ^6.0.0
+  path_provider: ^2.1.5
+  share_plus: ^10.1.2
+  cached_network_image: ^3.4.1
+
+  # Functional / value equality
+  equatable: ^2.0.7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+  # Codegen (riverpod)
+  build_runner: ^2.4.13
+  riverpod_generator: ^2.6.3
+  custom_lint: ^0.7.0
+  riverpod_lint: ^2.6.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/data/
