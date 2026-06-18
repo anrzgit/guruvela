@@ -81,7 +81,10 @@ class SettingsScreen extends ConsumerWidget {
                   ),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: Text('Language', style: context.text.titleLarge),
+                    child: Text(
+                      'Chat Language',
+                      style: context.text.titleLarge,
+                    ),
                   ),
                 ),
                 RadioGroup<AppLanguage>(
@@ -161,8 +164,9 @@ class SettingsScreen extends ConsumerWidget {
           Center(
             child: Text(
               '${AppConstants.appName} • v1.0.0',
-              style: context.text.bodySmall
-                  ?.copyWith(color: context.colors.textMuted),
+              style: context.text.bodySmall?.copyWith(
+                color: context.colors.textMuted,
+              ),
             ),
           ),
         ],

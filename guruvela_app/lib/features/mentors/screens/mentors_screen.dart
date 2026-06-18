@@ -21,10 +21,12 @@ class MentorsScreen extends ConsumerWidget {
       body: RefreshIndicator(
         onRefresh: () async => ref.refresh(mentorsProvider.future),
         child: mentors.when(
-          loading: () => const _Scrollable(child: SizedBox(
-            height: 400,
-            child: LoadingView(message: 'Loading mentors...'),
-          )),
+          loading: () => const _Scrollable(
+            child: SizedBox(
+              height: 400,
+              child: LoadingView(message: 'Loading mentors...'),
+            ),
+          ),
           error: (e, _) => _Scrollable(
             child: SizedBox(
               height: 400,
@@ -48,12 +50,11 @@ class MentorsScreen extends ConsumerWidget {
               SliverPadding(
                 padding: const EdgeInsets.all(AppSpacing.md),
                 sliver: SliverGrid(
-                  gridDelegate:
-                      const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 380,
-                    mainAxisSpacing: AppSpacing.md,
-                    crossAxisSpacing: AppSpacing.md,
-                    mainAxisExtent: 270,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: AppSpacing.xs,
+                    crossAxisSpacing: AppSpacing.xs,
+                    childAspectRatio: 0.7,
                   ),
                   delegate: SliverChildBuilderDelegate(
                     (context, i) => MentorCard(mentor: list[i]),
@@ -73,8 +74,10 @@ class MentorsScreen extends ConsumerWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Other Mentorship Options',
-                            style: context.text.titleLarge),
+                        Text(
+                          'Other Mentorship Options',
+                          style: context.text.titleLarge,
+                        ),
                         const SizedBox(height: AppSpacing.sm),
                         Text(
                           'For general guidance in a group setting, join our '
@@ -103,8 +106,6 @@ class _Scrollable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [child],
-    );
+    return ListView(children: [child]);
   }
 }

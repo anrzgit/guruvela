@@ -7,7 +7,6 @@ import '../../../core/theme/app_theme.dart';
 import '../../../data/models/mentor.dart';
 import '../../../providers/core_providers.dart';
 import '../../shared/widgets/app_card.dart';
-import '../../shared/widgets/whatsapp_button.dart';
 import '../../../core/utils/link_launcher.dart';
 
 /// Card for a single mentor — port of `MentorCard.jsx`. Avatar (with DiceBear
@@ -22,13 +21,9 @@ class MentorCard extends ConsumerWidget {
     final imageUrl = resolveImage(mentor.profileImagePath, mentor.name);
 
     return AppCard(
-      padding: const EdgeInsets.fromLTRB(
-        AppSpacing.lg,
-        AppSpacing.xl,
-        AppSpacing.lg,
-        AppSpacing.lg,
-      ),
+      padding: const EdgeInsets.all(AppSpacing.md),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           _Avatar(url: imageUrl, name: mentor.name),
           const SizedBox(height: AppSpacing.md),
@@ -46,8 +41,7 @@ class MentorCard extends ConsumerWidget {
               if (mentor.linkedinUrl != null) ...[
                 const SizedBox(width: 6),
                 InkWell(
-                  onTap: () =>
-                      LinkLauncher.open(context, mentor.linkedinUrl!),
+                  onTap: () => LinkLauncher.open(context, mentor.linkedinUrl!),
                   child: const Icon(
                     Icons.business_center,
                     size: 18,
@@ -75,11 +69,10 @@ class MentorCard extends ConsumerWidget {
           const SizedBox(height: 4),
           Text(
             mentor.state,
-            style: context.text.bodySmall
-                ?.copyWith(color: context.colors.textMuted),
+            style: context.text.bodySmall?.copyWith(
+              color: context.colors.textMuted,
+            ),
           ),
-          const Divider(height: AppSpacing.lg * 2),
-          const WhatsappButton(),
         ],
       ),
     );
@@ -100,17 +93,17 @@ class _Avatar extends StatelessWidget {
     final isSvg = url.contains('dicebear') || url.endsWith('.svg');
 
     Widget fallback() => CircleAvatar(
-          radius: 44,
-          backgroundColor: context.scheme.primary,
-          child: Text(
-            initial,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 28,
-              fontWeight: FontWeight.w800,
-            ),
-          ),
-        );
+      radius: 44,
+      backgroundColor: context.scheme.primary,
+      child: Text(
+        initial,
+        style: const TextStyle(
+          color: Colors.white,
+          fontSize: 28,
+          fontWeight: FontWeight.w800,
+        ),
+      ),
+    );
 
     return Container(
       padding: const EdgeInsets.all(4),
