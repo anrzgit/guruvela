@@ -16,10 +16,10 @@ abstract final class AppConfig {
   AppConfig._();
 
   static const String supabaseUrl =
-      String.fromEnvironment('SUPABASE_URL', defaultValue: '');
+      String.fromEnvironment('SUPABASE_URL', defaultValue: 'https://acaoqrybztxymacdzyzf.supabase.co');
 
   static const String supabaseAnonKey =
-      String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: '');
+      String.fromEnvironment('SUPABASE_ANON_KEY', defaultValue: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFjYW9xcnlienR4eW1hY2R6eXpmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDc4MTcyNzcsImV4cCI6MjA2MzM5MzI3N30.Z6heALQ8p-3881uM28tXR5yTzl7UB0y_5yUj8-TPZm0');
 
   static const String geminiApiKey =
       String.fromEnvironment('GEMINI_API_KEY', defaultValue: '');
