@@ -1,11 +1,11 @@
 {
-    "name": "guruvela_app",
-    "short_name": "guruvela_app",
+    "name": "Guruvela",
+    "short_name": "Guruvela",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Guruvela — JoSAA/CSAB college counselling, rank prediction, and mentorship app.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
