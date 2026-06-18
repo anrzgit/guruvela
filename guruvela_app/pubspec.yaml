@@ -51,6 +51,7 @@ dev_dependencies:
   riverpod_generator: ^2.6.3
   custom_lint: ^0.7.0
   riverpod_lint: ^2.6.3
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   uses-material-design: true
@@ -59,3 +60,18 @@ flutter:
     - assets/data/
     - assets/images/
     - google_fonts/
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/guruvela-logo-trasparent.png"
+  web:
+    generate: true
+    image_path: "assets/images/guruvela-logo-trasparent.png"
+  windows:
+    generate: true
+    image_path: "assets/images/guruvela-logo-trasparent.png"
+  macos:
+    generate: true
+    image_path: "assets/images/guruvela-logo-trasparent.png"
