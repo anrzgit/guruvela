@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Required for all network access (Supabase, image loading, etc.).
+         Must live here in the main manifest so it is included in release
+         builds — the debug manifest's copy only applies to debug. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Guruvela"
         android:name="${applicationName}"
